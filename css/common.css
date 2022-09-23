@@ -19,17 +19,6 @@
 			p{
 				text-indent: 2em;
 			}
-			.you{
-				height: 500px;
-				width: 150px;
-				border: 1px solid #395692;
-				/* float: right; */
-				margin-left: 100px
-				/*margin: 100px; */
-				position: fixed;
-				left: 60%;
-				top: 300px;
-			}
 			.fix{
 				content:"";
 				display: table;
