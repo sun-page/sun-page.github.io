@@ -9,6 +9,7 @@
 				height: 462px;
 				margin: 0px auto;
 				margin-bottom: 50px;
+				display: flex;
 			}
 			.title{
 				font-family: "微软雅黑";

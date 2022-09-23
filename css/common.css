@@ -10,8 +10,24 @@
 			a:hover{
 				opacity: 0.8;
 			}
+			pre{
+				font-family: "微软雅黑";
+			}
+			b span{
+				text-decoration: underline;
+			}
 			p{
 				text-indent: 2em;
+			}
+			.you{
+				height: 500px;
+				/* width: 100px; */
+				border: 1px solid #395692;
+				/* float: right; */
+				margin: 100px;
+				position: fixed;
+				left: 60%;
+				top: 300px;
 			}
 			.fix{
 				content:"";
