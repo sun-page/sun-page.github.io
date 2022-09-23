@@ -7,7 +7,6 @@
 		<link rel="stylesheet" type="text/css" href="css/works.css"/>
 		<link rel="icon" href="Images/a6b5fbec709aa7bd9e5bc8378397d41.png"/>
 	</head>
-
 	<body>
 		<script src="js/page.js"></script>
 		<div class="head fix">
@@ -35,40 +34,39 @@
 
 			<div class="c1">
 				<p class="title">mysql命令行大全</p>
-				<h3>Ⅰ 基础部分</h3>
+				<h3>Ⅰ 基础入门</h3>
 				<ul>				
+					<li>-数据库安装————<b>mysql -install </b></li>
+					<li>-数据库卸载————<b>mysql -remove </b></li>
+					<li>-数据库初始化———<b>mysql --initialize-insecure </b></li>
 					<li>-数据库启动————<b>net start mysql;</b></li>
-					<li>-登录数据库————<b>mysql -h '用户' -u '账号' -p '密码';</b></li>
-					<li>-新建数据库————<b>create database</b>  [if not exists]  <b>'数据库名';</b></li>
-					<li>-选择数据库————<b>use '数据库名'</b></li>
-					<li>-查看数据库————<b>show databases;</b></li>
-					<li>-查看指定数据库——<b>show database '数据库名';</b></li>
-					<li>-删除数据库————<b>drop database </b> [if exists] <b> '数据库名';</b></li>
-					<li>
-						<pre>
--创建数据表————<b>create table</b> [if not exists] <b>'表名'(</b>
-					<b>'字段名'  '字段类型'  ,</b>
-					<b>'字段名'  '字段类型' ,</b>
-				<b>	...</b>
-				<b>);</b>
-						</pre>
-					</li>
-					<li>-查看表结构————<b><span title="describe">desc</span> '数据表名';</b></li>
-					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
-					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
-					<li>-数据库停止——————<b>net stop mysql;</b></li>
+					<li>-数据库停止————<b>net stop mysql;</b></li>
+					<li>-登录数据库————<b>mysql -h localhost -u root -p ****;</b></li>
+					<li>-用户设置密码———<b>alter user '<span title="用户名">root</span>' @ '<span title="当前主机中的root用户">localhost</span>' identified by '<span title="需要设置的密码，若不需要密码可以为空">****</span>';</b></li>
+
 				</ul>
+<br>
 <hr>
-				<p class="title">mysql命令行大全</p>
-				<h3>Ⅰ 基础部分</h3>
-				<ul>				
-					<li>-数据库启动————<b>net start mysql;</b></li>
-					<li>-登录数据库————<b>mysql -h '用户' -u '账号' -p '密码';</b></li>
-					<li>-新建数据库————<b>create database</b>  [if not exists]  <b>'数据库名';</b></li>
+<br>
+				
+				<h3>Ⅱ基础部分</h3>
+				<ul>
+					<h4>库操作</h4>
+					<li>-新建数据库————<b>create database</b>  <span title="方括号内容可以不需要，意为'如果不存在数据库',为防止程序报错">[if not exists]</span>  <b>'数据库名';</b></li>
 					<li>-选择数据库————<b>use '数据库名'</b></li>
 					<li>-查看数据库————<b>show databases;</b></li>
 					<li>-查看指定数据库——<b>show database '数据库名';</b></li>
+					<li>-选择数据库————<b>use  '数据库名';</b></li>
+					<pre>               登录时直接选择<b>mysql -u root -p ****  '数据库名';</b></pre>
 					<li>-删除数据库————<b>drop database </b> [if exists] <b> '数据库名';</b></li>
+<br>
+
+
+					
+			
+
+
+			<h4>表操作</h4>
 					<li>
 						<pre>
 -创建数据表————<b>create table</b> [if not exists] <b>'表名'(</b>
@@ -83,16 +81,56 @@
 					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
 					<li>-数据库停止——————<b>net stop mysql;</b></li>
 				</ul>
-			</div>
+<br>
+<hr color="#s56fe6">
+<br>
+
+				<h3>Ⅲ数据类型</h3>
+				<ul>
+					<h4>库操作</h4>
+					<li>-新建数据库————<b>create database</b>  <span title="方括号内容可以不需要，意为'如果不存在数据库',为防止程序报错">[if not exists]</span>  <b>'数据库名';</b></li>
+					<li>-选择数据库————<b>use '数据库名'</b></li>
+					<li>-查看数据库————<b>show databases;</b></li>
+					<li>-查看指定数据库——<b>show database '数据库名';</b></li>
+					<li>-选择数据库————<b>use  '数据库名';</b></li>
+					<pre>               登录时直接选择<b>mysql -u root -p ****  '数据库名';</b></pre>
+					<li>-删除数据库————<b>drop database </b> [if exists] <b> '数据库名';</b></li>
+<br>
+
+
+					
 			
+
+
+			<h4>表操作</h4>
+					<li>
+						<pre>
+-创建数据表————<b>create table</b> [if not exists] <b>'表名'(</b>
+					<b>'字段名'  '字段类型'  ,</b>
+					<b>'字段名'  '字段类型' ,</b>
+				<b>	...</b>
+				<b>);</b>
+						</pre>
+					</li>
+					<li>-查看表结构————<b><span title="describe">desc</span> '数据表名';</b></li>
+					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
+					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
+					<li>-数据库停止——————<b>net stop mysql;</b></li>
+				</ul>
+
+
+
+			</div>
+
+
 
 				<div class="you">
 					<ol>
 						<li>
-							基础部分<dl><dd>·</dd><dd>·</dd></dl>
+							基础入门
 						</li>
-						<li>2</li>
-						<li></li>
+						<li>基础操作<dl><dd>&nbsp;&nbsp;·&nbsp;库操作</dd><dd>&nbsp;&nbsp;·&nbsp;表操作</dd></dl></li>
+						<li>数据类型</li>
 						<li><a href="#ding">置顶</a></li>
 					</ol>
 				</div>
