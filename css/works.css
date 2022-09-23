@@ -5,11 +5,12 @@
 				text-indent: 0em;
 			}
 			.content{
-				width: 50%;
+				width: 60%;
 				height: 462px;
 				margin: 0px auto;
 				margin-bottom: 50px;
 				display: flex;
+				justify-content: center;
 			}
 			.title{
 				font-family: "微软雅黑";
@@ -17,6 +18,15 @@
 				font-size: 35px;
 				font-weight: 700;
 				margin-top:35px ;
+			}
+			.c1{
+				flex: 6;
+			}
+			.you{
+				margin-top: 30px;
+				margin-left: 500px;
+				position: fixed;
+				flex: 4;
 			}
 			.c1 ul{
 				margin-top: 20px;
