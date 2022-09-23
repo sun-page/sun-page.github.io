@@ -52,7 +52,7 @@
 				<h3>Ⅱ基础部分</h3>
 				<ul>
 					<h4>库操作</h4>
-					<li>-新建数据库————<b>create database</b>  <span title="方括号内容可以不需要，意为'如果不存在数据库',为防止程序报错">[if not exists]</span>  <b>'数据库名';</b></li>
+					<li>-新建数据库————<b>create database</b>  <span title="方括号内容可以不需要&#13;意为'如果不存在数据库'&#10;为防止程序报错">[if not exists]</span>  <b>'数据库名';</b></li>
 					<li>-选择数据库————<b>use '数据库名'</b></li>
 					<li>-查看数据库————<b>show databases;</b></li>
 					<li>-查看指定数据库——<b>show database '数据库名';</b></li>
@@ -70,53 +70,102 @@
 					<li>
 						<pre>
 -创建数据表————<b>create table</b> [if not exists] <b>'表名'(</b>
-					<b>'字段名'  '字段类型'  ,</b>
-					<b>'字段名'  '字段类型' ,</b>
+					<b>'字段名'  '字段类型'  表的约束,</b>
+					<b>'字段名'  '字段类型'  表的约束,</b>
 				<b>	...</b>
 				<b>);</b>
 						</pre>
 					</li>
-					<li>-查看表结构————<b><span title="describe">desc</span> '数据表名';</b></li>
+					<li>-查看所有表————<b>show tables;</b></li>
+					<li>-数据表信息————<b>show table status [from 数据库名] [like 匹配] <span title="结果&#10;纵向&#10;排列">\G</span>;</b></li>
+					<li>-修改表名称————<b>alter table 旧表名 rename to|as 新表名;</b></li>
+					<pre>                                 <b>rename table 旧表名 to 新表名 [,旧表名 to 新表名]...;</b></pre>
+					<li>-修改表字符集———<b>alter table 表名 <span title="这里可以修改&#10;字符集→charset=utf8&#10;数据引擎&#10;校对集.等">表选项 [=] 值</span>;</b></li>
+					<li>-查看表结构————<b><span title="describe简写desc">desc|describe</span> '数据表名';</b></li>
+					<pre>                                 <b><span title="describe简写desc">desc|describe</span> '数据表名' '字段名';</b></pre>
 					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
-					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
-					<li>-数据库停止——————<b>net stop mysql;</b></li>
+					
+					<li>-修改字段名————<b>alter table 数据表名 change 旧字段名 新字段名 字段类型 [字段属性];</b></li>
+					<li>-修改字段类型———<b>alter table 数据表名 modify 字段名 新类型 [字段属性];</b></li>
+					<li>-修改字段位置———<b>alter table 数据表名 modify 字段名1 数据类型 [字段属性] [<span title="将字段1放字段2'前'面">first</span>|<span title="将字段1放字段2'后'面">after</span> 字段名2];</b></li>
+					<li>-新增字段—————<b>alter table 数据表名 add 新字段名 字段类型 [<span title="将新字段放原有字段'前'面">first</span>|<span title="将新字段放原有字段'后'面">after</span> 原有字段名];</b></li>
+					<pre>                                 <b>alter table 数据表名 add (新字段名1 字段类型1,新字段名2 字段类型2,... );</b></pre>
+					<li>-删除字段—————<b>alter table 数据表名 drop 字段名;</b></li>
+					<li>-删除数据表————<b>drop table <span title="方括号内容可以不需要&#13;意为'如果不存在数据库'&#10;为防止程序报错">[if exists]</span> 数据表名 ;</b></li>
+<br>
+					<h4>数据操作</h4>
+					<li>添加数据—————<b>insert [into] 数据表名  values(值1,值2,...);</b></li>
+					<pre>                                <b>insert [into] 数据表名 [(字段名1,字段名2,...)] values (值1,值2,...);</b></pre>
+					<pre>                                <b>insert [into] 数据表名 [(字段名1,字段名2,...)] values (值1,值2,...),(值1,值2,...);</b></pre>
+					<li>查询数据—————<b>select * from 数据表名;</b></li>
+					<pre>                                <b>select {字段名1,字段名,..} from 数据表名;</b></pre>
+					<li>条件查询数据———<b>select *|{字段名 1, 字段名 2 ,..} from 数据表名 where 字段名=值;</b></li>
+					<li>修改数据—————<b>update 数据表名 set 字段名 1 = 值 1  [,字段名 2 = 值 2] [where 条件];</b></li>
+					<li>删除数据—————<b>delete from 数据表名 [where 条件];</b></li>
+
+
+
 				</ul>
 <br>
 <hr color="#s56fe6">
 <br>
 
-				<h3>Ⅲ数据类型</h3>
-				<ul>
-					<h4>库操作</h4>
-					<li>-新建数据库————<b>create database</b>  <span title="方括号内容可以不需要，意为'如果不存在数据库',为防止程序报错">[if not exists]</span>  <b>'数据库名';</b></li>
-					<li>-选择数据库————<b>use '数据库名'</b></li>
-					<li>-查看数据库————<b>show databases;</b></li>
-					<li>-查看指定数据库——<b>show database '数据库名';</b></li>
-					<li>-选择数据库————<b>use  '数据库名';</b></li>
-					<pre>               登录时直接选择<b>mysql -u root -p ****  '数据库名';</b></pre>
-					<li>-删除数据库————<b>drop database </b> [if exists] <b> '数据库名';</b></li>
-<br>
+			<h3>Ⅲ数据类型</h3>
+				<h5>整数类型</h5>
+				<pre>
+			数据类型			字节数		无符号取值					有符号取值
+			 tinyint			 1			0~255						-128~127
+			smallint			 2			0~65535						-32768~32767
+			mediumint		 3			0~16777215					-8388608~8388607
+			   int				 4			0~4394967295				-2147483648~2147483647
+			 bigint			 8			0~18446744073709551615		-9223372036854775808~9223372036854775807
+				</pre>
+				<h5>浮点类型</h5>
+				<pre>
+					float 
+					double
+				</pre>
+
+				<h5>定点数类型</h5>
+				<pre>
+					decimal(M.D) 
+
+				</pre>
+				<h5>bit类型</h5>
+				<pre>
+					BIT(M)
+				</pre>
+				<h5>时间和日期类型</h5>
+				<pre>
+					YEAR 
+					DATE
+					TIME
+					DATETIME
+					TIMESTAMP
+				</pre>
+				<h5>字符串类型</h5>
+				<pre>
+					CHAR
+					VARCHAR
+					TEXT
+					ENUM
+					SET
+					BINARY
+					VARBINARY
+					BLOB
+				</pre>
 
 
+
+		<br>
+		<br>
+				<h4>表的约束</h4>
+					<li>-默认约束————<b>字段名 数据类型 <span>default</span> 默认值;</b></li>
+					<li>-非空约束————<b>字段名 数据类型 <span>not null</span></b></li>
+					<li>-唯一约束————<b>字段名 数据类型 <span>unique</span></b></li>
+					<li>-主键约束————<b>字段名 数据类型 <span>default</span></b></li>
+					<li>-自动增长————<b>show tables;</b></li>
 					
-			
-
-
-			<h4>表操作</h4>
-					<li>
-						<pre>
--创建数据表————<b>create table</b> [if not exists] <b>'表名'(</b>
-					<b>'字段名'  '字段类型'  ,</b>
-					<b>'字段名'  '字段类型' ,</b>
-				<b>	...</b>
-				<b>);</b>
-						</pre>
-					</li>
-					<li>-查看表结构————<b><span title="describe">desc</span> '数据表名';</b></li>
-					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
-					<li>-查看表创建语句——<b>show create table '数据表名';</b></li>
-					<li>-数据库停止——————<b>net stop mysql;</b></li>
-				</ul>
 
 
 
